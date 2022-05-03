@@ -8,13 +8,13 @@
       <link href="/2022/04/28/hexo-bugs/"/>
       <url>/2022/04/28/hexo-bugs/</url>
       
-        <content type="html"><![CDATA[<h2 id="hexo-init-出现spwan-failed"><a href="#hexo-init-出现spwan-failed" class="headerlink" title="hexo init 出现spwan failed"></a>hexo init 出现spwan failed</h2><p><img src="/images/hexo_init.png" alt="这是图片"></p><pre><code class="bash">$ hexo init blog</code></pre><p>这里的 blog 是hexo初始化创建的文件夹名<br>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="hexo-init-出现spwan-failed"><a href="#hexo-init-出现spwan-failed" class="headerlink" title="hexo init 出现spwan failed"></a>hexo init 出现spwan failed</h2><p><img src="/images/hexo_init.png" alt="这是图片" title="Magic Gardens"></p><pre><code class="bash">$ hexo init blog</code></pre><p>这里的 blog 是hexo初始化创建的文件夹名<br>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>]]></content>
       
       
       
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
       
