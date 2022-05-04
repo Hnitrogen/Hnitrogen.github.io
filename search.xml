@@ -4,42 +4,17 @@
   
     
     <entry>
-      <title>Hexo_Bugs</title>
-      <link href="/2022/04/28/hexo-bugs/"/>
-      <url>/2022/04/28/hexo-bugs/</url>
+      <title>hexo_bugs</title>
+      <link href="/2022/05/04/hexo-bugs/"/>
+      <url>/2022/05/04/hexo-bugs/</url>
       
-        <content type="html"><![CDATA[<h2 id="hexo-init-出现spwan-failed"><a href="#hexo-init-出现spwan-failed" class="headerlink" title="hexo init 出现spwan failed"></a>hexo init 出现spwan failed</h2><p><img src="/.io//1.png"></p><pre class="language-bash" data-language="bash"><code class="language-bash">``<span class="token variable"><span class="token variable">`</span> <span class="token function">bash</span>$ hexo init blog<span class="token variable">`</span></span>``</code></pre><p>这里的 blog 是hexo初始化创建的文件夹名<br>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>]]></content>
+        <content type="html"><![CDATA[<p>###最近搭建了基于hexo框架的个人博客，碰壁多次，<br>网上的解决方法很多都是错的，头铁的话容易睡不着觉<br>这里我将分享一些我遇到的头痛问题</p><h2 id="hexo-init-报错"><a href="#hexo-init-报错" class="headerlink" title="hexo init 报错"></a>hexo init 报错</h2><p><img src="/2022/05/04/hexo-bugs/1.png"></p><p>这个可以可以用</p><pre class="language-bash" data-language="bash"><code class="language-bash">hexo init blog</code></pre><p>最后的blog就是你初始化hexo，他会自己创建的文件夹的名字</p><h2 id="将博客上传github，连接超时"><a href="#将博客上传github，连接超时" class="headerlink" title="将博客上传github，连接超时"></a>将博客上传github，连接超时</h2><p><img src="/2022/05/04/hexo-bugs/2.jpg"></p><p>这个一般是hexo配置文件的问题</p><ul><li><p>首先找到hexo配置文件<br>  我的是D:\Blog\ _config.yml</p></li><li><p>网上很多更改配置文件如下：</p><pre class="language-bash" data-language="bash"><code class="language-bash">deploy:    type: <span class="token function">git</span>    repo: ********<span class="token punctuation">(</span>你GitHub仓库网址<span class="token punctuation">)</span>    branch: master</code></pre><p>但是其实随着GitHub更新，master 分支已经失效</p></li></ul><h3 id="正确的是："><a href="#正确的是：" class="headerlink" title="正确的是："></a>正确的是：</h3><pre class="language-bash" data-language="bash"><code class="language-bash">deploy:    type: <span class="token function">git</span>    repo: ********<span class="token punctuation">(</span>你GitHub仓库网址<span class="token punctuation">)</span>    branch: main</code></pre><h2 id="hexo-代码块异常"><a href="#hexo-代码块异常" class="headerlink" title="hexo 代码块异常"></a>hexo 代码块异常</h2><p><img src="/2022/05/04/hexo-bugs/3.png"></p><p><strong>blod 同样是修改hexo配置文件:</strong><br><img src="/2022/05/04/hexo-bugs/4.jpg"></p><h2 id="hexo上传图片无法显示"><a href="#hexo上传图片无法显示" class="headerlink" title="hexo上传图片无法显示"></a>hexo上传图片无法显示</h2><p><img src="/2022/05/04/hexo-bugs/5.png"></p><p>这个问题网上基本没有对的</p><ul><li>首先更改hexo配置文件<br>  ctrl + f 搜索  post_asset_folder</li></ul><pre class="language-bash" data-language="bash"><code class="language-bash">post_asset_folder: <span class="token boolean">true</span> </code></pre><p>其作用就是你在Git上     hexo new abc<br>他会创建一个 abc.md 的同时创建一个叫 abc 的文件夹(存放图片)</p><ul><li>接着用 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> https://github.com/CodeFalling/hexo-asset-image</code></pre>如果按网上装了其他插件记得 npm uninstall </li></ul><p>也可以看这个大佬的<a href="https://www.bilibili.com/video/BV1D7411U7Yk?spm_id_from=333.999.0.0">视频</a></p>]]></content>
       
       
       
         <tags>
             
             <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2018/09/12/wtf/"/>
-      <url>/2018/09/12/wtf/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>Welcome to <span class="token punctuation">[</span>Hexo<span class="token punctuation">]</span><span class="token punctuation">(</span>https://hexo.io/<span class="token punctuation">)</span><span class="token operator">!</span> This is your very first post. Check <span class="token punctuation">[</span>documentation<span class="token punctuation">]</span><span class="token punctuation">(</span>https://hexo.io/docs/<span class="token punctuation">)</span> <span class="token keyword">for</span> <span class="token function">more</span> info. If you get any problems when using Hexo, you can <span class="token function">find</span> the answer <span class="token keyword">in</span> <span class="token punctuation">[</span>troubleshooting<span class="token punctuation">]</span><span class="token punctuation">(</span>https://hexo.io/docs/troubleshooting.html<span class="token punctuation">)</span> oryou can ask me on <span class="token punctuation">[</span>GitHub<span class="token punctuation">]</span><span class="token punctuation">(</span>https://github.com/hexojs/hexo/issues<span class="token punctuation">)</span>.</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
             
         </tags>
       

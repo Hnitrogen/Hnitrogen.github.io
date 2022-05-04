@@ -4,14 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo_Bugs, PipiCat">
-    <meta name="description" content="hexo init 出现spwan failed
-``` bash
-$ hexo init blog
-```
-
-这里的 blog 是hexo初始化创建的文件夹名More info: Writing
-">
+    <meta name="keywords" content="hexo_bugs, PipiCat">
+    <meta name="description" content="###最近搭建了基于hexo框架的个人博客，碰壁多次，网上的解决方法很多都是错的，头铁的话容易睡不着觉这里我将分享一些我遇到的头痛问题
+hexo init 报错
+这个可以可以用
+hexo init blog
+最后的blog就是你初始化hex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +23,7 @@ $ hexo init blog
 
     
 
-    <title>Hexo_Bugs | PipiCat</title>
+    <title>hexo_bugs | PipiCat</title>
     <link rel="icon" type="image/png" href="/medias/logo2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -315,12 +313,12 @@ $ hexo init blog
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo_Bugs</h1>
+                    <h1 class="description center-align post-title">hexo_bugs</h1>
                 </div>
             </div>
         </div>
@@ -452,7 +450,7 @@ $ hexo init blog
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-28
+                    2022-05-04
                 </div>
                 
 
@@ -476,12 +474,42 @@ $ hexo init blog
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="hexo-init-出现spwan-failed"><a href="#hexo-init-出现spwan-failed" class="headerlink" title="hexo init 出现spwan failed"></a>hexo init 出现spwan failed</h2><p><img src="/.io//1.png"></p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">``<span class="token variable"><span class="token variable">`</span> <span class="token function">bash</span>
-$ hexo init blog
-<span class="token variable">`</span></span>``</code></pre>
-
-<p>这里的 blog 是hexo初始化创建的文件夹名<br>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+                <p>###最近搭建了基于hexo框架的个人博客，碰壁多次，<br>网上的解决方法很多都是错的，头铁的话容易睡不着觉<br>这里我将分享一些我遇到的头痛问题</p>
+<h2 id="hexo-init-报错"><a href="#hexo-init-报错" class="headerlink" title="hexo init 报错"></a>hexo init 报错</h2><p><img src="/2022/05/04/hexo-bugs/1.png"></p>
+<p>这个可以可以用</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">hexo init blog</code></pre>
+<p>最后的blog就是你初始化hexo，他会自己创建的文件夹的名字</p>
+<h2 id="将博客上传github，连接超时"><a href="#将博客上传github，连接超时" class="headerlink" title="将博客上传github，连接超时"></a>将博客上传github，连接超时</h2><p><img src="/2022/05/04/hexo-bugs/2.jpg"></p>
+<p>这个一般是hexo配置文件的问题</p>
+<ul>
+<li><p>首先找到hexo配置文件<br>  我的是D:\Blog\ _config.yml</p>
+</li>
+<li><p>网上很多更改配置文件如下：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">deploy:
+    type: <span class="token function">git</span>
+    repo: ********<span class="token punctuation">(</span>你GitHub仓库网址<span class="token punctuation">)</span>
+    branch: master</code></pre>
+<p>但是其实随着GitHub更新，master 分支已经失效</p>
+</li>
+</ul>
+<h3 id="正确的是："><a href="#正确的是：" class="headerlink" title="正确的是："></a>正确的是：</h3><pre class="language-bash" data-language="bash"><code class="language-bash">deploy:
+    type: <span class="token function">git</span>
+    repo: ********<span class="token punctuation">(</span>你GitHub仓库网址<span class="token punctuation">)</span>
+    branch: main</code></pre>
+<h2 id="hexo-代码块异常"><a href="#hexo-代码块异常" class="headerlink" title="hexo 代码块异常"></a>hexo 代码块异常</h2><p><img src="/2022/05/04/hexo-bugs/3.png"></p>
+<p><strong>blod 同样是修改hexo配置文件:</strong><br><img src="/2022/05/04/hexo-bugs/4.jpg"></p>
+<h2 id="hexo上传图片无法显示"><a href="#hexo上传图片无法显示" class="headerlink" title="hexo上传图片无法显示"></a>hexo上传图片无法显示</h2><p><img src="/2022/05/04/hexo-bugs/5.png"></p>
+<p>这个问题网上基本没有对的</p>
+<ul>
+<li>首先更改hexo配置文件<br>  ctrl + f 搜索  post_asset_folder</li>
+</ul>
+<pre class="language-bash" data-language="bash"><code class="language-bash">post_asset_folder: <span class="token boolean">true</span> </code></pre>
+<p>其作用就是你在Git上     hexo new abc<br>他会创建一个 abc.md 的同时创建一个叫 abc 的文件夹(存放图片)</p>
+<ul>
+<li>接着用 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> https://github.com/CodeFalling/hexo-asset-image</code></pre>
+如果按网上装了其他插件记得 npm uninstall </li>
+</ul>
+<p>也可以看这个大佬的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1D7411U7Yk?spm_id_from=333.999.0.0">视频</a></p>
 
                 
             </div>
@@ -508,7 +536,7 @@ $ hexo init blog
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hnitrogen.github.io/2022/04/28/hexo-bugs/">https://hnitrogen.github.io/2022/04/28/hexo-bugs/</a>
+                    <a href="https://hnitrogen.github.io/2022/05/04/hexo-bugs/">https://hnitrogen.github.io/2022/05/04/hexo-bugs/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -726,13 +754,13 @@ $ hexo init blog
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/04/28/hexo-bugs/">
+                <a href="/2022/05/04/hexo-bugs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Hexo_Bugs">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo_bugs">
                         
-                        <span class="card-title">Hexo_Bugs</span>
+                        <span class="card-title">hexo_bugs</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -743,7 +771,7 @@ $ hexo init blog
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-04
                             </span>
                         <span class="publish-author">
                             
@@ -769,16 +797,16 @@ $ hexo init blog
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/12/wtf/">
+                <a href="/2022/05/04/hexo-bugs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo_bugs">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">hexo_bugs</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -789,25 +817,22 @@ $ hexo init blog
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-04
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Hnitrogen
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
