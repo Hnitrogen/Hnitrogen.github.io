@@ -8,7 +8,7 @@
       <link href="/2022/05/05/plus/"/>
       <url>/2022/05/05/plus/</url>
       
-        <content type="html"><![CDATA[<h2 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h2><p><img src="/2022/05/05/plus/1.png"></p><p>这里的  -“A” 目的是让数组里面的 ‘ ‘ 转换后的值不超过26<br>eg.   ‘B’ = 66  所以 ‘B’ - ‘A’ =1 即 symbolValues[1]</p><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul><li>初始化<pre class="language-C" data-language="C"><code class="language-C">int arr[6] &#x3D; &#123;0,0,0,0,0,212&#125;; &#x2F;&#x2F; 传统的语法int arr[6] &#x3D; &#123;[5] &#x3D; 212&#125;; &#x2F;&#x2F; 把arr[5]初始化为212</code></pre></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h2><p><img src="/2022/05/05/plus/1.png"></p><p>这里的  -“A” 目的是让数组里面的 ‘ ‘ 转换后的值不超过26<br>eg.   ‘B’ = 66  所以 ‘B’ - ‘A’ =1 即 symbolValues[1]</p><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul><li>初始化<pre class="language-C" data-language="C"><code class="language-C">int arr[6] &#x3D; &#123;0,0,0,0,0,212&#125;; &#x2F;&#x2F; 传统的语法int arr[6] &#x3D; &#123;[5] &#x3D; 212&#125;; &#x2F;&#x2F; 把arr[5]初始化为212</code></pre>[4] = 31,30,31，那么 后面这些值将被用于初始化指定元素后面的元素。也就是说，在days[4]被初 始化为31后，days[5]和days[6]将分别被初始化为30和31。</li></ul>]]></content>
       
       
       
