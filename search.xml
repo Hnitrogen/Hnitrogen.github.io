@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>point</title>
+      <link href="/2022/05/06/point/"/>
+      <url>/2022/05/06/point/</url>
+      
+        <content type="html"><![CDATA[<h3 id="用指针遍历数组"><a href="#用指针遍历数组" class="headerlink" title="用指针遍历数组"></a>用指针遍历数组</h3><pre class="language-C" data-language="C"><code class="language-C">int sump(int * start, int * end)        &#123;    int total;    while(start&lt;end)        &#x2F;&#x2F; 等效: for的索引循环遍历    &#123;        total+&#x3D;*start;        start++;    &#125;    return total;&#125;int main()&#123;    int num[10];    sump(num,num+10);   &#x2F;&#x2F; 注意: 指向数组末尾的下一个位置    return 0;               &#x2F;&#x2F; 所以while是不等条件,最后start&#x3D;end,在end-1最后执行算法&#125;</code></pre><p>10.12 order.c</p><p>ar[i]和*(ar+i)这两个表达式都是等价的<br>但是，只有当ar是指针变量时，才 能使用ar++这样的表达式。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>无知</title>
       <link href="/2022/05/05/plus/"/>
       <url>/2022/05/05/plus/</url>
