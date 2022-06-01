@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>Git</title>
-      <link href="/2022/05/17/Git/"/>
-      <url>/2022/05/17/Git/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h2 id="1-配置实验环境"><a href="#1-配置实验环境" class="headerlink" title="1. 配置实验环境"></a>1. 配置实验环境</h2><ul><li><h2 id="下载Git"><a href="#下载Git" class="headerlink" title="下载Git"></a>下载Git</h2><pre class="language-bash" data-language="bash"><code class="language-bash">https://registry.npmmirror.com/binary.html</code></pre><p>这里推荐淘宝镜像源安装</p></li><li><h2 id="配置git-config"><a href="#配置git-config" class="headerlink" title="配置git.config"></a>配置git.config</h2><p>  进入用户目录找到.gitconfig文件,配置如下</p></li></ul><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"此处填写你注册时的用户名"</span><span class="token function">git</span> config --global user.email <span class="token string">"此处填写你注册时的邮箱"</span><span class="token comment"># 一般只要不报错，可以跳过下面寻找.gitconfig文件</span></code></pre><p>会生成一下文字:</p><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>user<span class="token punctuation">]</span>name  <span class="token operator">=</span> <span class="token string">"XXX"</span>email <span class="token operator">=</span> <span class="token string">"XXX@qq.com"</span></code></pre><ul><li><h2 id="建立SSH连接"><a href="#建立SSH连接" class="headerlink" title="建立SSH连接"></a>建立SSH连接</h2><ul><li>再桌面右键 Git bash here <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/.ssh  </code></pre>如果报错就:  ssh-keygen -t rsa -C “邮箱” ，然后连着三个回车</li></ul><p>  生成两个文件： id_rsa id_rsa.pub 存放在 C:\Users\admin.ssh 文件夹下<br>  复制 id_rsa.pub里面的内容</p><p>  打开github.com –&gt; 注册账号 –&gt; 点击右上角头像</p></li><li><p>-&gt; 在下拉菜单找到 Settings  –&gt; 然后再左侧 点击SSH </p><p>   <img src="/2022/05/17/Git/1.png"></p><p>   然后复制 id_rsa.pub 进去 就能完成公钥的添加了！</p></li></ul><p><a href="http://git-school.github.io/visualizing-git/">http://git-school.github.io/visualizing-git/</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Git  笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>无知</title>
       <link href="/2022/05/05/plus/"/>
       <url>/2022/05/05/plus/</url>
