@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>compile</title>
+      <link href="/2022/06/03/compile/"/>
+      <url>/2022/06/03/compile/</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何在windows下写makefile并完成编译"><a href="#如何在windows下写makefile并完成编译" class="headerlink" title="如何在windows下写makefile并完成编译"></a>如何在windows下写makefile并完成编译</h1><p>“在Linux下我们一般通过gcc和makefile完成编译，Windows下C/C++的编译一般使用的是IDE集成的编译器，或者Cmake。”</p><p><strong>但我就是要用最古老的方法 = = </strong></p><h1 id="1-安装Mingw-get"><a href="#1-安装Mingw-get" class="headerlink" title="1. 安装Mingw-get"></a>1. 安装Mingw-get</h1><ul><li><p>这里推荐使用bing作为搜索引擎,直接搜索Mingw-get<br><img src="/2022/06/03/compile/1.png"><br>打开网页，点击绿色的download下载，然后完成安装，最后添加安装地址的bin目录到系统环境变量。</p></li><li><p>然后打开cmd</p><pre class="language-zash" data-language="zash"><code class="language-zash">mingw-get install mingw32-make</code></pre></li></ul><p>然后将mingw32-make名字重命名为make<br><img src="/2022/06/03/compile/2.png"></p><p>这样在有makefile的文件夹下面打开cmd/任意的shell </p><pre class="language-git" data-language="git"><code class="language-git">make</code></pre><p><img src="/2022/06/03/compile/3.png"></p><p>就能成功编译了！(值得注意的是，如果系统内没用gcc/g++ make会报错)</p><ul><li>此时文件夹内就生成了.exe的可执行文件<br><img src="/2022/06/03/compile/4.png"></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 make </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>无知</title>
       <link href="/2022/05/05/plus/"/>
       <url>/2022/05/05/plus/</url>
