@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>如何科学上网？</title>
+      <link href="/2022/06/27/vpn/"/>
+      <url>/2022/06/27/vpn/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装代理工具"><a href="#安装代理工具" class="headerlink" title="安装代理工具"></a>安装代理工具</h2><p>这里我是用的是<a href="https://github.com/Fndroid/clash_for_windows_pkg">clash</a>(clash for windows ) , 你也可以选择如V2rayN这样的代理工具。</p><ul><li>点击clash可以跳转到对应github</li></ul><h5 id="点击Releases-下载喜欢的版本"><a href="#点击Releases-下载喜欢的版本" class="headerlink" title="点击Releases 下载喜欢的版本"></a>点击Releases 下载喜欢的版本</h5><p><img src="/2022/06/27/vpn/1.png">    </p><h5 id="解压完成安装后将你的订阅复制"><a href="#解压完成安装后将你的订阅复制" class="headerlink" title="解压完成安装后将你的订阅复制"></a>解压完成安装后将你的订阅复制</h5><p>(至于订阅的获取自行搜索)<br><img src="/2022/06/27/vpn/2.png"></p><h2 id="使用火狐浏览器"><a href="#使用火狐浏览器" class="headerlink" title="使用火狐浏览器"></a>使用火狐浏览器</h2><ul><li>笔者出现过其他浏览器无法自动代理的问题</li></ul><p>在clash界面复制端口，并开启代理(变绿的按钮)<br><img src="/2022/06/27/vpn/3.png"></p><p>打开火狐浏览器 –&gt; 点击设置 –&gt; 搜索代理 —&gt; 如图更改(端口要和clash主页的一致)<br><img src="/2022/06/27/vpn/4.png"></p><h2 id="至此配置完毕"><a href="#至此配置完毕" class="headerlink" title="至此配置完毕!"></a>至此配置完毕!</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>compile</title>
       <link href="/2022/06/03/compile/"/>
       <url>/2022/06/03/compile/</url>
