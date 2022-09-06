@@ -4,13 +4,19 @@
   
     
     <entry>
-      <title>plan</title>
-      <link href="/2022/07/02/plan/"/>
-      <url>/2022/07/02/plan/</url>
+      <title>tutorial</title>
+      <link href="/2022/09/05/tutorial/"/>
+      <url>/2022/09/05/tutorial/</url>
       
-        <content type="html"><![CDATA[<h1 id="Timetable"><a href="#Timetable" class="headerlink" title="Timetable"></a>Timetable</h1><p>因为朝向够好 —&gt; 理论有充足的阳光 —&gt; 应该是能早起的</p><p>来看看厦大<br><img src="/2022/07/02/plan/1.jpeg"></p><p><img src="/2022/07/02/plan/2.jpeg"></p><h1 id="时间表"><a href="#时间表" class="headerlink" title="时间表:"></a>时间表:</h1><p>(每周周一晚上 与他总结一周所学 –&gt; 及时调整路线，分析进度快慢)</p><h3 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h3><p>9:00 起床</p><p>9:30前 洗漱吃完早餐(不点外卖省钱) </p><h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>y总算法基础课(至少三个打卡标)   —&gt;    学累了可以 离散数学 和 数理统计(至少一小部分/三小节)</p><p>中午    12:40 吃完饭 </p><p>12:40 —&gt; 1：45  午睡捏</p><p>下午2:00 前调整好自己</p><p>操作系统,计算机网络，计组(408 数据结构外的)<br>(网课 3p以上 书的话 25页码)</p><p>晚上</p><p>6:00 吃完饭 可以打两把游戏<br>7:20 前调整好自己</p><p>背单词,高数<br>高数(1800 做题一面 网课对应刷)</p><p>(任务结束可以选择玩)</p><p>12:30 睡觉 </p>]]></content>
+        <content type="html"><![CDATA[<h2 id="学习Linux的基础命令"><a href="#学习Linux的基础命令" class="headerlink" title="学习Linux的基础命令"></a>学习Linux的基础命令</h2><p>实验环境: 在Windows安装Git Bash 来实践(如果有安装Linux虚拟机或者Linux就更好了)</p><h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a><font color="#10aec2">pwd</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;打印当前路径$ pwd&#x2F;c&#x2F;Users&#x2F;LiJia</code></pre><h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a><font color="#10aec2">ls</font></h3><p>-lh 可以输出更详细的东西 </p><pre class="language-none"><code class="language-none">&#x2F;&#x2F;可以列出当前路径下的所有文件$ lsAppData&#x2F;Application DataContacts&#x2F;</code></pre><h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a><font color="#10aec2">mkdir</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;可以创建一个文件夹$ mkdir test$ lstest</code></pre><h3 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a><font color="#10aec2">rmdir</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;可以删除一个空文件夹$ rmdir test$ ls</code></pre><h3 id="rm-rf"><a href="#rm-rf" class="headerlink" title="rm-rf"></a><font color="#10aec2">rm-rf</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;可以删除一个文件夹(递归删除子目录)  删库命令$ rmdir test$ ls</code></pre><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a><font color="#10aec2">touch</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;创建一个文件$ rmdir test$ ls -lhtotal 0-rw-r--r-- 1 LiJia 197121 0 Sep  6 00:11 test</code></pre><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a><font color="#10aec2">rm</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;删除文件$ rm test$ ls</code></pre><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a><font color="#10aec2">vim</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;可以写入一个文件$ touch hello.c$ vim hello.c</code></pre><h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a><font color="#10aec2">cat</font></h3><pre class="language-none"><code class="language-none">&#x2F;&#x2F;可以打印一个文件的内容$ cat hello.c$ ....</code></pre><h2 id="编写-ssh-config"><a href="#编写-ssh-config" class="headerlink" title="编写.ssh/config"></a>编写.ssh/config</h2><pre class="language-none"><code class="language-none">$ cd .ssh$ touch configHost wiki         HostName 47.113.222.66        User acs &#x2F;&#x2F;      Port  10000     (一般不需要)</code></pre><p>之后只需要 ssh-copy-id wiki 就能实现免密ssh登录服务器了</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
       
     </entry>
     
