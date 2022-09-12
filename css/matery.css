@@ -1,19 +1,19 @@
-/*全局基础样式*/
-/*小屏幕下(手机类)的样式*/
+/*鍏ㄥ眬鍩虹鏍峰紡*/
+/*灏忓睆骞曚笅(鎵嬫満绫�)鐨勬牱寮�*/
 @media only screen and (max-width: 601px) {
     .container {
         width: 95%;
     }
 }
 
-/*中等屏幕下(平板类)的样式*/
+/*涓瓑灞忓箷涓�(骞虫澘绫�)鐨勬牱寮�*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
     }
 }
 
-/*大屏幕下(桌面类)的样式*/
+/*澶у睆骞曚笅(妗岄潰绫�)鐨勬牱寮�*/
 @media only screen and (min-width: 993px) {
     .container {
         width: 90%;
@@ -187,7 +187,7 @@ pre code {
     background-color: #272822;
 }
 
-/* 键盘 kbd 标签样式 */
+/* 閿洏 kbd 鏍囩鏍峰紡 */
 kbd {
     margin: 0 3px;
     padding: 3px 5px;
@@ -232,7 +232,7 @@ mark {
 
 .card .card-image img {
     border-radius: 8px 8px 0 0;
-    /* 修改文章列表图片填充样式为 cover 以覆盖整个区域而不会被缩放 */
+    /* 淇敼鏂囩珷鍒楄〃鍥剧墖濉厖鏍峰紡涓� cover 浠ヨ鐩栨暣涓尯鍩熻€屼笉浼氳缂╂斁 */
     object-fit: cover;
 }
 
@@ -299,7 +299,7 @@ header .brand-logo .logo-span {
     font-size: 1.6rem;
 }
 
-/*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
+/*淇敼椤堕儴 logo 鐨勬枃瀛楀瀭鐩村榻愪负 top锛岄伩鍏嶉粯璁� middle 鐪嬭捣鏉ュ亸涓�*/
 header .brand-logo .waves-effect {
     vertical-align: top;
 }
@@ -528,7 +528,7 @@ header .go-back i {
     line-height: 56px;
 }
 
-/* 背景图效果. */
+/* 鑳屾櫙鍥炬晥鏋�. */
 .bg-cover {
     position: relative;
     display: flex;
@@ -745,7 +745,7 @@ header .go-back i {
     }
 }
 
-/*中等屏幕下(平板类)的样式*/
+/*涓瓑灞忓箷涓�(骞虫澘绫�)鐨勬牱寮�*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .index-card .card .card-content {
         padding: 20px 20px;
@@ -861,7 +861,7 @@ header .go-back i {
     margin-top: -10px;
 }
 
-/*文章列表卡片各样式*/
+/*鏂囩珷鍒楄〃鍗＄墖鍚勬牱寮�*/
 #articles {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -1000,12 +1000,12 @@ article .article-tags .chip {
     color: #999 !important;
 }
 
-/*文章详情样式*/
+/*鏂囩珷璇︽儏鏍峰紡*/
 #artDetail {
     margin-top: -60px;
 }
 
-/* 修改小屏幕下文章详情table样式. */
+/* 淇敼灏忓睆骞曚笅鏂囩珷璇︽儏table鏍峰紡. */
 @media only screen and (max-width: 550px) {
     #articleContent table {
         table-layout: fixed;
@@ -1828,7 +1828,7 @@ thead {
     cursor: pointer;
 }
 
-/*尾部样式*/
+/*灏鹃儴鏍峰紡*/
 footer {
     padding-bottom: 1px;
 }
@@ -1846,7 +1846,7 @@ footer .copy-right {
     color: #dbdbdb;
 }
 
-/*搜索层样式*/
+/*鎼滅储灞傛牱寮�*/
 #searchIcon {
     font-size: 1.2rem;
 }
@@ -1896,7 +1896,7 @@ p.search-result-summary{
     white-space: pre-wrap;
 }
 
-/*回到顶部按钮样式*/
+/*鍥炲埌椤堕儴鎸夐挳鏍峰紡*/
 .top-scroll {
     display: none;
     position: fixed;
@@ -2027,7 +2027,7 @@ p.search-result-summary{
     background: white;
 }
 
-/*二级菜单*/
+/*浜岀骇鑿滃崟*/
 
 .nav-menu {
 }
