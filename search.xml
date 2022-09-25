@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Django</title>
+      <link href="/2022/09/24/docker/"/>
+      <url>/2022/09/24/docker/</url>
+      
+        <content type="html"><![CDATA[<p>//featureImages: /source/images/1.png</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>随想录</title>
       <link href="/2022/09/15/moon/"/>
       <url>/2022/09/15/moon/</url>
@@ -61,7 +80,7 @@
     
     
     <entry>
-      <title>compile</title>
+      <title>在Windows下手写Makefile</title>
       <link href="/2022/06/03/compile/"/>
       <url>/2022/06/03/compile/</url>
       

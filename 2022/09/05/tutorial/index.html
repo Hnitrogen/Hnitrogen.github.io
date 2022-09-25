@@ -5,11 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="tutorial, PipiCat">
-    <meta name="description" content="学习Linux的基础命令实验环境: 在Windows安装Git Bash 来实践(如果有安装Linux虚拟机或者Linux就更好了)
-pwd&amp;#x2F;&amp;#x2F;打印当前路径
-
-$ pwd
-&amp;#x2F;c&amp;#x2F;Users&amp;#x2F;">
+    <meta name="description" content="Linux常识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,6 +18,15 @@ $ pwd
 
 
     
+    <style>
+        body{
+            background-image: url(https://s1.328888.xyz/2022/09/25/VcHFE.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
 
     <title>tutorial | PipiCat</title>
     <link rel="icon" type="image/png" href="/medias/logo2.png">
@@ -316,7 +321,7 @@ $ pwd
         let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
+                alert('你不是主人 o(￣ヘ￣o＃) ！');
                 location.href = '/';
             }
         }
@@ -326,7 +331,7 @@ $ pwd
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.328888.xyz/2022/09/25/VcQ6m.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -805,8 +810,7 @@ Host wiki
                 <a href="/2022/09/15/moon/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="随想录">
+                        <img src="https://s1.328888.xyz/2022/09/25/VcUyX.png" class="responsive-img" alt="随想录">
                         
                         <span class="card-title">随想录</span>
                     </div>
@@ -814,7 +818,7 @@ Host wiki
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            勿失明月
                         
                     </div>
                     <div class="publish-info">
@@ -850,8 +854,7 @@ Host wiki
                 <a href="/2022/06/27/vpn/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="如何科学上网？">
+                        <img src="https://s1.328888.xyz/2022/09/25/VcxvI.png" class="responsive-img" alt="如何科学上网？">
                         
                         <span class="card-title">如何科学上网？</span>
                     </div>
@@ -859,7 +862,7 @@ Host wiki
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            格局打开
                         
                     </div>
                     <div class="publish-info">
@@ -1057,11 +1060,11 @@ Host wiki
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2022</span>
             
             <a href="/about" target="_blank">Hnitrogen</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1087,6 +1090,60 @@ Host wiki
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "5";
+                        var startDate = "4";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             
