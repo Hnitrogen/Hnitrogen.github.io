@@ -492,7 +492,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>//featureImages: /source/images/1.png</p>
+                <p>现在有很多的web框架，我选择使用python的django框架，主要是看重他开发效率高这一点</p>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><h4 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h4><p>指的是写独立后端,这样就可以配置多个前端(方便捏)</p>
+<h4 id="分文件编写"><a href="#分文件编写" class="headerlink" title="分文件编写"></a>分文件编写</h4><p>这样可以使用 继承 ，提高可读性，降低项目耦合度 </p>
+<h4 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h4><p>分文件编写确实利于开发,但是不利于渲染,浏览器打开一个JS的速度高于打开多个JS,所以份文件编写之后用Shell脚本实现一个打包，将所有JS打包到一块去,这其实就是头文件的链接</p>
+<h3 id="项目浮沉"><a href="#项目浮沉" class="headerlink" title="项目浮沉"></a>项目浮沉</h3><h4 id="Js"><a href="#Js" class="headerlink" title="Js"></a>Js</h4><p>JavaScript写前端总是会遇到玄幻的bug,这个一般通过 console.log 去打印调试,还有就是调用一些api需要检查拼写错误</p>
+<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><p>这个常见是在调试的时候没有清除 浏览器缓存 (在开启开发人员工具的情况下,右键刷新 点击 “清空缓存进行过硬刷新”)</p>
+<h4 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h4><p>在阿里云通过学生云加速计划，白嫖了一台 1C2G 的ECS云服务器，但是在使用vscode远程开发的时候出现过SSH连接失效,提交工单后说是云盘io激增导致Linux假死，以至于SSH连接缓慢。</p>
+<p>—&gt;  在华为云嫖了一台2C4G的服务器解决,侧面证明是因为服务器内存太小导致的</p>
+<h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h4><p>这个是做个网关入口时候会遇到的(Gateway),这里面的配置文件需要配置相应的位置和Django的宏</p>
 
                 
             </div>
