@@ -20,7 +20,7 @@
     
     <style>
         body{
-            background-image: url(https://s1.328888.xyz/2022/09/25/VcHFE.png);
+            background-image: url(https://s3.bmp.ovh/imgs/2022/11/09/6ab8c9ccdd6d154f.png);
             background-repeat:no-repeat;
             background-size: 100% 100%;
             background-attachment:fixed;
@@ -38,13 +38,38 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <!-- 加载动画 -->
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
+    
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
+    <!-- 加载动画 -->
+    
+<div id="loading-box">
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+        <div class="configure-border-1">
+            <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+            <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function(){
+        document.body.style.overflow = 'auto';
+        document.getElementById('loading-box').classList.add("loaded")
+    }, false)
+</script>
+
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -497,22 +522,22 @@
 <p>这个可以可以用</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">hexo init blog</code></pre>
 <p>最后的blog就是你初始化hexo，他会自己创建的文件夹的名字</p>
-<h2 id="将博客上传github，连接超时"><a href="#将博客上传github，连接超时" class="headerlink" title="将博客上传github，连接超时"></a>将博客上传github，连接超时</h2><p><img src="/2022/05/04/hexo-bugs/2.jpg"></p>
+<h2 id="hexo-d-报错"><a href="#hexo-d-报错" class="headerlink" title="hexo d 报错"></a>hexo d 报错</h2><h2 id="将博客上传github，连接超时"><a href="#将博客上传github，连接超时" class="headerlink" title="将博客上传github，连接超时"></a>将博客上传github，连接超时</h2><p><img src="/2022/05/04/hexo-bugs/2.jpg"></p>
 <p>这个一般是hexo配置文件的问题</p>
 <ul>
 <li><p>首先找到hexo配置文件<br>  我的是D:\Blog\ _config.yml</p>
 </li>
 <li><p>网上很多更改配置文件如下：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">deploy:
-    type: <span class="token function">git</span>
-    repo: ********<span class="token punctuation">(</span>你GitHub仓库网址<span class="token punctuation">)</span>
+    type: git
+    repo: ********(你GitHub仓库网址)
     branch: master</code></pre>
 <p>但是其实随着GitHub更新，master 分支已经失效</p>
 </li>
 </ul>
 <h3 id="正确的是："><a href="#正确的是：" class="headerlink" title="正确的是："></a>正确的是：</h3><pre class="language-bash" data-language="bash"><code class="language-bash">deploy:
-    type: <span class="token function">git</span>
-    repo: ********<span class="token punctuation">(</span>你GitHub仓库网址<span class="token punctuation">)</span>
+    type: git
+    repo: ********(你GitHub仓库网址) &#x2F;&#x2F;这里最好使用ssh连接,https会有概率连不上
     branch: main</code></pre>
 
 <ul>
@@ -526,10 +551,10 @@
 <ul>
 <li>首先更改hexo配置文件<br>  ctrl + f 搜索  post_asset_folder</li>
 </ul>
-<pre class="language-bash" data-language="bash"><code class="language-bash">post_asset_folder: <span class="token boolean">true</span> </code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">post_asset_folder: true </code></pre>
 <p>其作用就是你在Git上     hexo new abc<br>他会创建一个 abc.md 的同时创建一个叫 abc 的文件夹(存放图片)</p>
 <ul>
-<li>接着用 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> https://github.com/CodeFalling/hexo-asset-image</code></pre>
+<li>接着用 <pre class="language-bash" data-language="bash"><code class="language-bash">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image</code></pre>
 如果按网上装了其他插件记得 npm uninstall </li>
 </ul>
 <p>也可以看这个大佬的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1D7411U7Yk?spm_id_from=333.999.0.0">视频</a></p>
@@ -1310,8 +1335,6 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
@@ -1326,6 +1349,8 @@ $(function () {
 
     
 
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     

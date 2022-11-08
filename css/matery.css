@@ -241,7 +241,9 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #1e9eb3 0%, #0f95b0 100%);
+    /* background-image: linear-gradient(to right, #1e9eb3 0%, #0f95b0 100%); */
+    /* background-image: linear-gradient(to right, #06e2ff 0%, #06f512 100%); */
+    background-image: linear-gradient(to right, #5df1c5 0%, #48d4ff 100%); 
 }
 
 .text-color {
@@ -2142,4 +2144,19 @@ p.search-result-summary{
     height: 50px;
     padding: 0;
     margin: 0;
+}
+
+/* 滚动条：自己修改颜色样式 */
+::-webkit-scrollbar-thumb {
+    background-color: #66FFFF;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 0em;
+}
+::-webkit-scrollbar-track {
+    background-color: #CCDDFF;
+    border-radius: 0em;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
