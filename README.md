@@ -141,7 +141,7 @@ git push
 - 分支：`main`；发布源：GitHub Actions；根路径：`/`。
 - 流水线：`.github/workflows/ci.yml`；无需配置额外令牌或 `DEPLOY_TARGET` 变量。
 
-每次推送 `main` 都会安装锁定依赖、检查类型和内容、执行测试、生成站点与中文搜索索引、检查内部链接，再发布到 GitHub Pages。PR 只执行检查，不发布。流水线会将旧站的分支发布方式切换为 GitHub Actions。
+每次推送 `main` 都会安装锁定依赖、检查类型和内容、执行测试、生成站点与中文搜索索引、检查内部链接，再发布到 GitHub Pages。PR 只执行检查，不发布。Pages 的发布源需在仓库 Settings → Pages → Build and deployment → Source 中一次性选择 GitHub Actions。工作流令牌不能代替仓库管理员修改这个设置。
 
 日常发布：
 
