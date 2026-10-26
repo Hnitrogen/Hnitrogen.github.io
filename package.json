@@ -1,0 +1,40 @@
+{
+  "name": "agentic-note",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "check": "astro check",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview --host 127.0.0.1",
+    "new": "node scripts/new-post.mjs",
+    "publish": "node scripts/publish-post.mjs",
+    "deploy": "git push origin main",
+    "deploy:cloudflare": "npm run check && npm run build && wrangler pages deploy dist --project-name agentic-note",
+    "test": "node --test tests/*.test.mjs",
+    "verify:build": "node --env-file-if-exists=.env scripts/verify-build.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "astro": "^7.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "gray-matter": "^4.0.3",
+    "pagefind": "^1.5.2",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.152.0"
+  },
+  "overrides": {
+    "miniflare": {
+      "undici": "^7.30.1"
+    }
+  }
+}

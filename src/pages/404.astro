@@ -1,0 +1,5 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/posts';
+---
+<Base title="页面未找到" section="404" noindex><section class="not-found"><span class="mono">404 / UNCHARTED TERRITORY</span><h1>这条小径，<br />还没有被写下。</h1><p>页面可能已移动，或者这只是一个尚未开始的想法。</p><div><a href={withBase()} class="solid-button">回到所有笔记 ↗</a><button data-search-open class="text-button">搜索一下 →</button></div></section></Base>

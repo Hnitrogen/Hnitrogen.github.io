@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import GardenAside from '../components/GardenAside.astro';
+import { getPosts, formatDate, postUrl, categories } from '../lib/posts';
+const posts = await getPosts();
+const years = [...new Set(posts.map((post) => post.data.pubDate.getUTCFullYear()))];
+---
+<Base title="时间归档" section="时间归档"><section class="collection-heading"><div class="eyebrow">A TIMELINE OF LEARNING</div><h1>时间的切片<span>{String(posts.length).padStart(2, '0')}</span></h1><p>把零散的记录连起来，也就看见了走过的路。</p></section><div class="archive-list">{years.map((year) => <section class="archive-year"><h2>{year}<span class="mono">{posts.filter((post) => post.data.pubDate.getUTCFullYear() === year).length} ENTRIES</span></h2>{posts.filter((post) => post.data.pubDate.getUTCFullYear() === year).map((post) => <a href={postUrl(post)}><time datetime={post.data.pubDate.toISOString()} class="mono">{formatDate(post.data.pubDate, true)}</time><span>{post.data.title}</span><small>{categories[post.data.category].label}</small><span>↗</span></a>)}</section>)}</div><GardenAside slot="aside" /></Base>

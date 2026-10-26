@@ -1,0 +1,15 @@
+---
+import Icon from './Icon.astro';
+import { getPosts, tags, categoryEntries, withBase } from '../lib/posts';
+const posts = await getPosts();
+const usedTags = Object.entries(tags).map(([id, tag]) => ({ id, ...tag, count: posts.filter((post) => post.data.tags.includes(id)).length })).filter((tag) => tag.count).sort((a, b) => b.count - a.count);
+---
+<aside class="context-sidebar" aria-label="知识库索引">
+  <div class="aside-label"><span class="status-dot"></span>一个生长中的数字花园</div>
+  <p class="aside-intro">学习，实践，记录。<br />在代码与文字之间，<br />建立自己的连接。</p>
+  <div class="garden-stat"><div><strong>{String(posts.length).padStart(2, '0')}</strong><span>篇笔记</span></div><div><strong>{String(categoryEntries.length).padStart(2, '0')}</strong><span>个主题</span></div></div>
+  <section class="aside-section"><h2>主题索引 <span class="mono">TOPICS</span></h2><div class="topic-index">{categoryEntries.map(([id, category]) => <a href={withBase(`topics/${id}/`)}><span>{category.label}</span><span class="mono">{String(posts.filter((post) => post.data.category === id).length).padStart(2, '0')} <Icon name="arrow" size={12} /></span></a>)}</div></section>
+  <section class="aside-section"><h2>标签漫游 <span class="mono">TAGS</span></h2><div class="tag-cloud">{usedTags.map((tag) => <a href={withBase(`tags/${tag.id}/`)}>{tag.label}<span>{tag.count}</span></a>)}</div></section>
+  <a class="rss-note" href={withBase('rss.xml')}><Icon name="rss" size={18} /><span>让更新来找你<small>通过 RSS 订阅这个花园</small></span><Icon name="arrow" size={15} /></a>
+  <p class="aside-footnote">文字是思考留下的路径。<br />不用急着抵达，先好好记录。</p>
+</aside>

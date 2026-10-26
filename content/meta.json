@@ -1,0 +1,29 @@
+{
+  "categories": {
+    "ai": { "label": "AI 工程", "description": "从模型能力到可用系统，记录 Agent、上下文与工作流。", "order": 1 },
+    "frontend": { "label": "前端开发", "description": "界面、框架与浏览器，把体验落实到细节。", "order": 2 },
+    "engineering": { "label": "工程实践", "description": "工具、架构与交付，让日常开发更从容。", "order": 3 },
+    "notes": { "label": "思考随记", "description": "还在生长的想法，以及值得留下的小事。", "order": 4 }
+  },
+  "tags": {
+    "agent": { "label": "Agent" },
+    "context": { "label": "上下文工程" },
+    "astro": { "label": "Astro" },
+    "typescript": { "label": "TypeScript" },
+    "workflow": { "label": "工作流" },
+    "cloudflare": { "label": "Cloudflare" },
+    "git": { "label": "Git" },
+    "writing": { "label": "写作" },
+    "design": { "label": "界面设计" }
+  },
+  "posts": {
+    "building-with-agents": { "category": "ai", "tags": ["agent", "context", "workflow"], "featured": true },
+    "context-is-a-design-problem": { "category": "ai", "tags": ["context", "agent"] },
+    "astro-content-workbench": { "category": "frontend", "tags": ["astro", "writing", "typescript"] },
+    "quiet-interface": { "category": "frontend", "tags": ["design"] },
+    "git-as-a-content-database": { "category": "engineering", "tags": ["git", "workflow", "cloudflare"] },
+    "small-tools-long-life": { "category": "engineering", "tags": ["typescript", "workflow"] },
+    "notes-that-grow": { "category": "notes", "tags": ["writing"] },
+    "draft-example": { "category": "notes", "tags": ["writing"] }
+  }
+}

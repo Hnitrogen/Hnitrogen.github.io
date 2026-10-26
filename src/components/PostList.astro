@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+import { categories, tags, postUrl, withBase, formatDate, readingTime, type Post } from '../lib/posts';
+interface Props { posts: Post[]; }
+const { posts } = Astro.props;
+---
+<div class="post-list">
+  {posts.map((post, index) => <article class="post-row" data-category={post.data.category} data-date={post.data.pubDate.valueOf()} data-updated={(post.data.updatedDate || post.data.pubDate).valueOf()}>
+    <div class="post-index mono">{String(index + 1).padStart(2, '0')}</div>
+    <div class="post-row-body">
+      <div class="post-row-meta"><a href={withBase(`topics/${post.data.category}/`)}>{categories[post.data.category].label}</a><span class="meta-separator">/</span><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>{post.data.example && <span class="sample-label">示例</span>}{post.data.featured && <span class="featured-label">精选</span>}</div>
+      <h2><a href={postUrl(post)}>{post.data.title}<Icon name="arrow" size={20} /></a></h2>
+      <p>{post.data.description}</p>
+      <div class="post-row-bottom"><div class="post-tags">{post.data.tags.map((tag) => <a href={withBase(`tags/${tag}/`)}># {tags[tag].label}</a>)}</div><span class="reading-time"><Icon name="clock" size={12} />{readingTime(post)} 分钟阅读</span></div>
+    </div>
+  </article>)}
+</div>
+<p class="filter-empty" hidden>这个分类还没有文章，换个分类看看。</p>

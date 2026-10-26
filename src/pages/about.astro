@@ -1,0 +1,6 @@
+---
+import Base from '../layouts/Base.astro';
+import GardenAside from '../components/GardenAside.astro';
+import { withBase } from '../lib/posts';
+---
+<Base title="关于这个花园" section="关于"><section class="collection-heading"><div class="eyebrow">HELLO, WORLD.</div><h1>保持好奇，<br /><span class="muted-heading">持续构建。</span></h1><p>这里是 Hnitrogen 的个人知识库，记录技术、实践和思考。</p></section><div class="prose about-prose"><h2>为什么写在这里</h2><p>有些理解只在动手之后出现，有些想法只有写下来才会变得清晰。这个小站为它们留一个位置，也让相同的问题在下一次出现时，有迹可循。</p><h2>你会在这里看到</h2><ul><li><strong>AI 工程</strong>：Agent、上下文和可重复的工作流。</li><li><strong>前端开发</strong>：框架、界面和浏览器中的细节。</li><li><strong>工程实践</strong>：从工具到交付，关于如何把事情做好。</li><li><strong>思考随记</strong>：未完成的想法，也值得被记录。</li></ul><h2>一座开放的花园</h2><p>文章会随着新的理解而更新。你可以通过 <a href={withBase('rss.xml')}>RSS</a> 订阅，也可以在 <a href="https://github.com/Hnitrogen" target="_blank" rel="noreferrer">GitHub ↗</a> 找到我。</p><blockquote><p>不追求记录所有事，只留下值得再次思考的部分。</p></blockquote><p class="about-sample-note">当前附带的文章均标注为「示例」，用于展示排版和写作流程，可以在开始正式写作后逐篇替换。</p></div><GardenAside slot="aside" /></Base>

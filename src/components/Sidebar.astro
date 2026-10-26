@@ -1,0 +1,34 @@
+---
+import Icon from './Icon.astro';
+import { getPosts, categoryEntries, withBase, postUrl } from '../lib/posts';
+import { site } from '../config';
+const posts = await getPosts();
+const current = Astro.url.pathname;
+---
+<aside class="sidebar" id="site-sidebar" aria-label="站点导航">
+  <a class="brand" href={withBase()} aria-label="Nitro Notes 首页"><span class="brand-mark">n<span>.</span></span><span>Nitro<span class="brand-light"> / Notes</span><small>A PERSONAL KNOWLEDGE BASE</small></span></a>
+  <button class="sidebar-search" data-search-open><Icon name="search" size={16} /><span>搜索笔记…</span><kbd>⌘ K</kbd></button>
+  <nav class="primary-nav" aria-label="主导航">
+    <a class:list={[{ active: current === withBase() }]} href={withBase()} aria-current={current === withBase() ? 'page' : undefined}><Icon name="grid" size={17} />全部文章<span class="nav-count">{posts.length}</span></a>
+    <a class:list={[{ active: current === withBase('archive/') }]} href={withBase('archive/')} aria-current={current === withBase('archive/') ? 'page' : undefined}><Icon name="archive" size={17} />时间归档</a>
+  </nav>
+  <div class="nav-section-label"><span>知识目录</span><span class="mono">EXPLORER</span></div>
+  <nav class="document-tree" aria-label="文章文档树">
+    {categoryEntries.map(([id, category]) => {
+      const group = posts.filter((post) => post.data.category === id);
+      return <details open>
+        <summary><Icon name="down" size={13} class="tree-chevron" /><Icon name="folder" size={16} /><span>{category.label}</span><span class="nav-count">{group.length}</span></summary>
+        <div class="tree-children">
+          <a class="tree-overview" href={withBase(`topics/${id}/`)}>浏览分类 <Icon name="arrow" size={11} /></a>
+          {group.map((post) => <a class:list={['tree-post', { active: current === postUrl(post) }]} href={postUrl(post)} aria-current={current === postUrl(post) ? 'page' : undefined} title={post.data.title}><Icon name="file" size={13} /><span>{post.data.title}</span></a>)}
+        </div>
+      </details>;
+    })}
+  </nav>
+  <div class="sidebar-bottom">
+    <a class="about-nav" href={withBase('about/')}><Icon name="info" size={16} />关于这个花园<Icon name="arrow" size={14} /></a>
+    <div class="sidebar-colophon"><span class="status-dot"></span><span>保持好奇，持续构建</span><span class="mono">v1.0</span></div>
+    <div class="sidebar-tools"><a href={site.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Icon name="github" size={17} /></a><a href={withBase('rss.xml')} aria-label="订阅 RSS"><Icon name="rss" size={17} /></a><span class="tool-divider"></span><button data-theme-toggle aria-label="切换深色主题" title="切换深色 / 浅色"><Icon name="sun" size={18} class="theme-light-icon" /><Icon name="moon" size={18} class="theme-dark-icon" /></button><span class="mono sidebar-year">© {new Date().getFullYear()} NITRO</span></div>
+  </div>
+</aside>
+<button class="sidebar-overlay" data-menu-close aria-label="关闭导航" tabindex="-1"></button>

@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import GardenAside from '../components/GardenAside.astro';
+import { getPosts, categoryEntries } from '../lib/posts';
+const posts = await getPosts();
+---
+<Base>
+  <section class="home-intro"><div class="eyebrow"><span class="little-cross">+</span> THE DIGITAL GARDEN OF HNITRO</div><h1>把想法写下来，<br /><span>让知识连接起来。</span></h1><p>关于 AI、代码与构建的持续记录。<br class="mobile-break" /> 一座慢慢生长的个人知识库。</p><div class="intro-bottom"><span class="mono">LEARN IN PUBLIC. BUILD IN THE OPEN.</span><span class="intro-arrow">↙</span></div></section>
+  <section class="articles-section" aria-labelledby="articles-heading"><div class="section-heading"><h2 id="articles-heading">最近的记录<span class="mono"> / <span data-visible-count>{posts.length}</span> ENTRIES</span></h2><label class="sort-label"><span class="sr-only">排序文章</span><select id="post-sort"><option value="newest">最新发布</option><option value="updated">最近更新</option><option value="oldest">最早发布</option></select></label></div><div class="category-filters" aria-label="按主题筛选"><button class="active" data-category-filter="all" aria-pressed="true">全部<span>{posts.length}</span></button>{categoryEntries.map(([id, category]) => <button data-category-filter={id} aria-pressed="false">{category.label}<span>{posts.filter((post) => post.data.category === id).length}</span></button>)}</div><PostList posts={posts} /><div class="list-end"><span></span><p>每一次记录，都是一次生长 <span>✳</span></p><span></span></div></section>
+  <GardenAside slot="aside" />
+</Base>

@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import GardenAside from '../../components/GardenAside.astro';
+import PostList from '../../components/PostList.astro';
+import { categoryEntries, getPosts, withBase } from '../../lib/posts';
+export function getStaticPaths() { return categoryEntries.map(([id, category]) => ({ params: { topic: id }, props: { category } })); }
+const { category } = Astro.props;
+const posts = (await getPosts()).filter((post) => post.data.category === Astro.params.topic);
+---
+<Base title={category.label} description={category.description} section={category.label}><section class="collection-heading"><a class="back-link" href={withBase()}>← 全部文章</a><div class="eyebrow">TOPIC / {Astro.params.topic?.toUpperCase()}</div><h1>{category.label}<span>{String(posts.length).padStart(2, '0')}</span></h1><p>{category.description}</p></section><PostList posts={posts} />{!posts.length && <p class="empty-state">这里还在生长，第一篇笔记即将开始。</p>}<GardenAside slot="aside" /></Base>

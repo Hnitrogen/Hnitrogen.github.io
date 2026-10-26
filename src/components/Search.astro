@@ -1,0 +1,9 @@
+---
+import Icon from './Icon.astro';
+import { withBase } from '../lib/posts';
+---
+<dialog class="search-dialog" id="search-dialog" data-base={withBase()} aria-labelledby="search-title">
+  <div class="search-dialog-heading"><Icon name="search" size={21} /><label id="search-title" class="sr-only" for="search-input">全文搜索笔记</label><input id="search-input" type="search" placeholder="搜索想法、技术或关键词…" autocomplete="off" /><button data-search-close aria-label="关闭搜索"><kbd>ESC</kbd></button></div>
+  <div id="search-results" class="search-results" aria-live="polite"><p class="search-hint">从一个关键词开始，找到相关的笔记。</p></div>
+  <div class="search-dialog-footer"><span>搜索文章标题与全文</span><span><kbd>↑</kbd> <kbd>↓</kbd> 选择 <kbd>↵</kbd> 打开</span></div>
+</dialog>

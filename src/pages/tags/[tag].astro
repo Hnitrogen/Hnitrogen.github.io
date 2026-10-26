@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import GardenAside from '../../components/GardenAside.astro';
+import PostList from '../../components/PostList.astro';
+import { tags, getPosts, withBase } from '../../lib/posts';
+export function getStaticPaths() { return Object.entries(tags).map(([id, tag]) => ({ params: { tag: id }, props: { tag } })); }
+const { tag } = Astro.props;
+const posts = (await getPosts()).filter((post) => post.data.tags.includes(Astro.params.tag!));
+---
+<Base title={`# ${tag.label}`} section="标签漫游"><section class="collection-heading"><a class="back-link" href={withBase()}>← 全部文章</a><div class="eyebrow">CONNECTED BY A TAG</div><h1># {tag.label}<span>{String(posts.length).padStart(2, '0')}</span></h1><p>沿着一个关键词，发现笔记之间的连接。</p></section><PostList posts={posts} />{!posts.length && <p class="empty-state">这个标签下还没有公开笔记。</p>}<GardenAside slot="aside" /></Base>

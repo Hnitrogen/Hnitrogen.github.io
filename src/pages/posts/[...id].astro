@@ -1,0 +1,26 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { getPosts, categories, tags, withBase, postUrl, formatDate, readingTime } from '../../lib/posts';
+export async function getStaticPaths() { return (await getPosts()).map((post) => ({ params: { id: post.id }, props: { post } })); }
+interface Props { post: CollectionEntry<'posts'>; }
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const posts = await getPosts();
+const index = posts.findIndex((entry) => entry.id === post.id);
+const previous = posts[index + 1];
+const next = posts[index - 1];
+const toc = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+---
+<Base title={post.data.title} description={post.data.description} section={categories[post.data.category].label} article>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <article class="article" data-pagefind-body>
+    <a class="back-link" href={withBase() } data-pagefind-ignore>← 所有笔记</a>
+    <header class="article-heading"><div class="eyebrow"><a href={withBase(`topics/${post.data.category}/`)} data-pagefind-filter="category">{categories[post.data.category].label}</a><span>/</span><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>{post.data.example && <span class="sample-label">示例文章</span>}</div><h1 data-pagefind-meta="title">{post.data.title}</h1><p class="article-description" data-pagefind-meta="description">{post.data.description}</p><div class="article-byline"><span class="author-avatar">N</span><span>Hnitrogen</span><span>·</span><span>{readingTime(post)} 分钟阅读</span>{post.data.updatedDate && <><span>·</span><span>更新于 {formatDate(post.data.updatedDate)}</span></>}</div><div class="article-tagline"><div class="post-tags">{post.data.tags.map((tag) => <a href={withBase(`tags/${tag}/`)}># {tags[tag].label}</a>)}</div><button class="copy-link" data-copy-link aria-label="复制文章链接"><Icon name="link" size={15} /><span>复制链接</span></button></div></header>
+    <div class="prose"><Content /></div>
+    <div class="article-signoff" data-pagefind-ignore><span>✳</span><p>写下来，是为了更好地理解。<small>感谢你读到这里。</small></p><a href={withBase('rss.xml')}>订阅后续记录 <Icon name="arrow" size={15} /></a></div>
+  </article>
+  <nav class="article-pagination" aria-label="相邻文章">{previous ? <a href={postUrl(previous)}><span>← 上一篇记录</span><strong>{previous.data.title}</strong></a> : <span></span>}{next && <a href={postUrl(next)}><span>下一篇记录 →</span><strong>{next.data.title}</strong></a>}</nav>
+  <aside class="context-sidebar article-toc" slot="aside" aria-label="文章目录"><div class="aside-section"><h2>本页目录 <span class="mono">ON THIS PAGE</span></h2><nav class="toc-nav">{toc.map((heading) => <a href={`#${heading.slug}`} class:list={[{ nested: heading.depth === 3 }]}>{heading.text}</a>)}</nav></div><div class="toc-note"><span class="mono">READ. THINK. REPEAT.</span><p>把一个问题想明白，<br />比收集十个答案更有趣。</p></div><a href="#main-content" class="back-to-top">回到顶部 ↑</a></aside>
+</Base>
