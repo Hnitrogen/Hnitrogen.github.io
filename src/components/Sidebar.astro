@@ -11,6 +11,7 @@ const current = Astro.url.pathname;
   <nav class="primary-nav" aria-label="主导航">
     <a class:list={[{ active: current === withBase() }]} href={withBase()} aria-current={current === withBase() ? 'page' : undefined}><Icon name="grid" size={17} />全部文章<span class="nav-count">{posts.length}</span></a>
     <a class:list={[{ active: current === withBase('archive/') }]} href={withBase('archive/')} aria-current={current === withBase('archive/') ? 'page' : undefined}><Icon name="archive" size={17} />时间归档</a>
+    <a class:list={[{ active: current === withBase('tools/time-slice/') }]} href={withBase('tools/time-slice/')} aria-current={current === withBase('tools/time-slice/') ? 'page' : undefined}><Icon name="clock" size={17} />时间片<span class="nav-count">工具</span></a>
   </nav>
   <div class="nav-section-label"><span>知识目录</span><span class="mono">EXPLORER</span></div>
   <nav class="document-tree" aria-label="文章文档树">

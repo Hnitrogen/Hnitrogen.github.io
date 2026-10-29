@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import '../../styles/time-slice.css';
+---
+<Base title="时间片" section="时间片" description="随手记下正在做的事，被打断前留一句，下次接着来。一个只保存在浏览器里的轻量清单。" noindex>
+  <section class="time-slice" data-time-slice aria-labelledby="slice-title">
+    <header class="slice-heading">
+      <div><div class="eyebrow"><span class="little-cross">+</span> A LITTLE ROOM FOR UNFINISHED THINGS</div><h1 id="slice-title">时间片<span class="slice-title-dot">.</span></h1><p>事情可以暂停，思路不用重来。</p></div>
+      <div class="slice-heading-tools"><div class="slice-heading-note mono">WRITE IT DOWN.<br />PICK IT UP LATER.</div><button type="button" class="slice-lock-again" data-slice-lock-again hidden>锁定 <span aria-hidden="true">↗</span></button></div>
+    </header>
+
+    <noscript><p class="slice-warning">开启 JavaScript 后即可使用本地清单和留档功能。</p></noscript>
+    <form class="slice-lock" data-slice-lock aria-labelledby="slice-lock-title">
+      <div class="slice-lock-mark mono" aria-hidden="true">[ ··· ]</div>
+      <div class="eyebrow">PERSONAL SPACE</div>
+      <h2 id="slice-lock-title">留给自己的一小块地方。</h2>
+      <p>输入口令，继续你的时间片。</p>
+      <label for="slice-password">访问口令</label>
+      <div class="slice-lock-field"><input id="slice-password" data-slice-password type="password" autocomplete="current-password" required aria-describedby="slice-lock-error" /><button type="submit" disabled>进入时间片 <span aria-hidden="true">↗</span></button></div>
+      <p class="slice-lock-error" id="slice-lock-error" data-slice-lock-error role="alert" hidden></p>
+    </form>
+
+    <div data-slice-content hidden inert>
+    <div class="slice-warning" data-storage-warning role="alert" hidden><p data-storage-message></p><button type="button" data-download-original hidden>下载原始记录</button></div>
+
+    <div class="slice-focus">
+      <span class="slice-live-dot" aria-hidden="true"></span>
+      <label for="slice-focus">此刻在做</label>
+      <input id="slice-focus" type="text" placeholder="把注意力放在一件事上…" autocomplete="off" data-slice-focus />
+      <span class="slice-focus-hint mono">ONE THING AT A TIME</span>
+    </div>
+
+    <div class="slice-grid">
+      <div class="slice-workbench">
+        <div class="slice-toolbar">
+          <div class="slice-views" role="group" aria-label="显示模式"><button type="button" class="active" data-view="list" aria-pressed="true">清单</button><button type="button" data-view="text" aria-pressed="false">纯文本</button></div>
+          <div class="slice-toolbar-actions">
+            <button type="button" class="slice-add" data-add><span aria-hidden="true">＋</span> 记一件事</button>
+            <details class="slice-files"><summary>文件 <Icon name="down" size={12} /></summary><div class="slice-file-menu"><button type="button" data-export="markdown">导出 Markdown</button><button type="button" data-export="backup">备份全部记录 · JSON</button><button type="button" data-import>导入文本 / 备份</button></div></details>
+            <input type="file" accept=".json,.md,.markdown,.txt,text/plain,application/json,text/markdown" data-import-file hidden />
+          </div>
+        </div>
+
+        <div class="slice-list-panel" data-list-panel>
+          <div class="slice-list-meta"><p data-count>还没有待办，先放一件小事进来。</p><label><input type="checkbox" data-hide-done /> 隐藏已处理</label></div>
+          <div class="slice-list" data-list role="group" aria-label="事项清单"></div>
+          <div class="slice-empty" data-empty>
+            <div class="slice-empty-mark mono" aria-hidden="true">[&nbsp; ]</div>
+            <h2>给脑子腾一点地方。</h2><p>待办、进展、突然冒出的想法，都先放在这里。</p>
+            <button type="button" data-start>写下第一件事 <span aria-hidden="true">↗</span></button>
+            <span>也可以切到「纯文本」，直接粘贴你原来的缩进清单。</span>
+          </div>
+          <p class="slice-all-done" data-all-done hidden>都处理好了。留一点空白，也挺好。</p>
+        </div>
+
+        <div data-text-panel hidden>
+          <label class="sr-only" for="slice-editor">纯文本清单</label>
+          <textarea id="slice-editor" class="slice-editor" spellcheck="false" data-editor aria-describedby="slice-editor-help" placeholder="- [ ] 一件正在做的事&#10;  - 做到哪里了&#10;  - 下一步做什么&#10;&#10;- [x] 一件已经处理的事"></textarea>
+          <div class="slice-editor-tools"><div><button type="button" data-indent="in" aria-label="缩进选中行">缩进 →</button><button type="button" data-indent="out" aria-label="取消选中行缩进">← 退格</button><button type="button" data-toggle-line>切换完成</button></div><span class="mono" data-line-count>1 LINE</span></div>
+          <p id="slice-editor-help" class="slice-editor-help"><kbd>Tab</kbd> 缩进 · <kbd>⌘ / Ctrl ↵</kbd> 切换完成 · <kbd>Esc</kbd> 返回清单<br />用 <code>-</code> 写事项，两个空格缩进；普通文字也可以保留。</p>
+        </div>
+
+        <footer class="slice-status"><span><span class="status-dot" aria-hidden="true"></span><span data-save-status role="status" aria-live="polite">准备好了</span></span><span class="mono">LOCAL ONLY</span></footer>
+      </div>
+
+      <aside class="slice-notes" aria-label="时间片留档">
+        <section class="slice-checkpoint">
+          <div class="slice-side-heading"><Icon name="clock" size={15} /><h2>暂停之前</h2><span class="mono">CHECKPOINT</span></div>
+          <p class="slice-side-description">给下次回来的自己，留一个接头暗号。</p>
+          <label for="slice-note">做到哪了？下一步是什么？</label>
+          <textarea id="slice-note" rows="5" placeholder="刚看完第一部分，接下来核对数据。&#10;卡住的地方也可以记在这里。" data-slice-note></textarea>
+          <button type="button" class="slice-pause" data-pause><Icon name="archive" size={16} />暂停并留档<span aria-hidden="true">↗</span></button>
+          <p class="slice-pause-hint">保存整份清单和这句话，随时接着做。</p>
+        </section>
+
+        <section class="slice-history-section">
+          <div class="slice-side-heading"><h2>留下的时间片</h2><span class="mono" data-history-count>00</span></div>
+          <div data-history class="slice-history"></div>
+          <p class="slice-history-empty" data-history-empty>每次暂停，都是一个可以回来的地方。<br />你的第一份留档会出现在这里。</p>
+        </section>
+        <p class="slice-local-note"><Icon name="info" size={14} /><span>记录保存在当前浏览器，不会上传。<br />换设备或清理浏览器前，记得备份 JSON。</span></p>
+      </aside>
+    </div>
+
+    <footer class="slice-footnote"><span class="mono">A SCRATCHPAD, NOT ANOTHER DEADLINE.</span><span>不急，一件一件来。</span></footer>
+
+    <dialog class="slice-dialog" data-restore-dialog aria-labelledby="slice-restore-title"><form method="dialog"><h2 id="slice-restore-title">从这个时间片接着做？</h2><p>当前清单会先自动留档，再载入选中的内容。</p><div><button value="cancel">取消</button><button value="restore" class="solid-button">留档并载入</button></div></form></dialog>
+    <dialog class="slice-dialog" data-import-dialog aria-labelledby="slice-import-title"><form method="dialog"><h2 id="slice-import-title">载入这份记录？</h2><p>当前内容会先自动留档。JSON 备份里的历史记录也会一并保留。</p><p data-import-name></p><div><button value="cancel">取消</button><button value="import" class="solid-button">留档并导入</button></div></form></dialog>
+    </div>
+  </section>
+  <script>import '../../scripts/time-slice';</script>
+</Base>
