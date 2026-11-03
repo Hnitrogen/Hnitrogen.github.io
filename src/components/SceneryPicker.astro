@@ -1,0 +1,9 @@
+---
+import { withBase } from '../lib/paths';
+import { LANDSCAPES } from '../lib/landscapes.mjs';
+---
+<div class="scenery-picker" role="group" aria-label="切换风景" data-pagefind-ignore>
+  <span>换一段风景</span>
+  {LANDSCAPES.map((scene, index) => <button type="button" data-scenery={scene.id} aria-label={scene.label} aria-pressed={index === 0 ? 'true' : 'false'} title={scene.label}><img src={withBase(scene.thumbnail)} alt="" width="40" height="26" loading="lazy" /></button>)}
+  <span class="sr-only" data-scenery-status aria-live="polite"></span>
+</div>

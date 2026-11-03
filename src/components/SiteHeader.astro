@@ -1,0 +1,12 @@
+---
+import Icon from './Icon.astro';
+import { withBase } from '../lib/posts';
+import { site, navigation } from '../config';
+const current = Astro.url.pathname;
+const active = (path: string) => current === withBase(path);
+---
+<header class="site-header">
+  <a class="header-brand" href={withBase()} aria-label={`${site.title} 首页`}>{site.title}</a>
+  <nav class="header-navigation" aria-label="主导航">{navigation.map(({label, path}) => <a href={withBase(path)} class:list={[{ active: active(path) }]} aria-current={active(path) ? 'page' : undefined}>{label}</a>)}</nav>
+  <div class="header-actions"><button data-search-open aria-label="搜索笔记" title="搜索笔记 · ⌘ K"><Icon name="search" size={19} /></button><button data-theme-toggle aria-label="切换深色主题" title="切换深色 / 浅色"><Icon name="sun" size={20} class="theme-light-icon" /><Icon name="moon" size={20} class="theme-dark-icon" /></button><button class="mobile-menu" data-menu-toggle aria-label="展开导航" aria-controls="site-sidebar" aria-expanded="false"><Icon name="menu" size={22} /></button></div>
+</header>

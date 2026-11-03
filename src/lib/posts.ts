@@ -1,6 +1,8 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import metadata from "../../content/meta.json";
 import { isPublished, readingMinutes } from "./content-registry.mjs";
+import { withBase } from './paths';
+export { withBase } from './paths';
 
 export type Post = CollectionEntry<"posts">;
 export const categories: Record<
@@ -11,8 +13,6 @@ export const tags: Record<string, { label: string }> = metadata.tags;
 export const categoryEntries = Object.entries(categories).sort(
   (a, b) => a[1].order - b[1].order,
 );
-export const withBase = (path = "") =>
-  `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 export const postUrl = (post: Post) => withBase(`posts/${post.id}/`);
 export const formatDate = (date: Date, short = false) =>
   new Intl.DateTimeFormat("zh-CN", {

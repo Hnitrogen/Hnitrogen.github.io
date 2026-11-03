@@ -1,0 +1,26 @@
+{
+  "purpose": "Implemented landscape theme selected by the user on 2026-11-03",
+  "mode": "built-in image_gen for original photography backgrounds; HTML for typography and layout",
+  "research": [
+    {
+      "name": "Links TV public portfolio presentation",
+      "url": "https://www.youtube.com/@linksphotograph"
+    },
+    {
+      "name": "Xiaomi HiUI official repository",
+      "url": "https://github.com/XiaoMi/hiui"
+    }
+  ],
+  "iconAssumption": "Xiaomi official HiUI outlined SVG icons",
+  "prompts": [
+    {
+      "key": "alpine-drive",
+      "prompt": "Use case: photorealistic-natural. Asset type: ORIGINAL landscape photography background for a personal blog design preview, not a UI mockup. Reference image 1 supplies the red sedan identity and the feeling of a real self-drive trip, not a scene to duplicate. Generate a new location and composition. Cinematic but credible natural colors and detailed real textures, no illustrated or anime elements. Wide landscape image, approximately 1536x1024. A vast landscape with one small red sedan showing travel scale, not a car advertisement. Keep the car on the left and about 6-9% of frame width, with road geometry physically realistic, no extra vehicles or people. The right half of the image should naturally contain lighter low-detail sky and airy mist for readable dark blog text, without an artificial rectangle or UI panel. No text, UI, watermark, invented place names, logos, ornamental effects or graphic overlays. The landscape should convey open-road freedom, quiet exploration, and grounded quality of life. Scene: a winding paved road beside a pale blue alpine lake beneath layered snow-streaked mountains. Deep pine-covered slopes and a few warm grasses at the far left foreground. Early sun through broken cloud, broad atmospheric light across the lake and valley. The road leads from the lower left toward the distant center, with the little red sedan traveling into the scenery. The right half opens into pale luminous mist above the lake and distant mountains. Composition is open and asymmetrical, with the environmental scale far larger than the vehicle. Avoid exaggerated oversaturation and artificial HDR."
+    },
+    {
+      "key": "forest-road",
+      "prompt": "Use case: photorealistic-natural. Asset type: ORIGINAL landscape photography background for a personal blog design preview, not a UI mockup. Reference image 1 supplies the red sedan identity and the feeling of a real self-drive trip, not a scene to duplicate. Generate a new location and composition. Cinematic but credible natural colors and detailed real textures, no illustrated or anime elements. Wide landscape image, approximately 1536x1024. A vast landscape with one small red sedan showing travel scale, not a car advertisement. Keep the car on the left and about 6-9% of frame width, with road geometry physically realistic, no extra vehicles or people. The right half of the image should naturally contain lighter low-detail sky and airy mist for readable dark blog text, without an artificial rectangle or UI panel. No text, UI, watermark, invented place names, logos, ornamental effects or graphic overlays. The landscape should convey open-road freedom, quiet exploration, and grounded quality of life. Scene: a quiet paved mountain road curving through a real evergreen forest after light rain. Slender pine trunks and wet fern textures on the left foreground, soft morning sun filtering through mist, distant wooded mountain contours. One small red sedan travels away along the road at the lower left. On the right the trees thin into a natural luminous foggy valley, letting the depth and reflected light supply ample calm space. Muted pine green, silver mist, weathered charcoal tarmac and restrained warm sunlight. Lived-in outdoor photographic feeling, not a fantasy forest, no neon or excessive glow."
+    }
+  ],
+  "coastSource": "User-supplied Model3_47.jpg from tesla-gallery-model-3-2024; no claim of authorship or personal travel"
+}

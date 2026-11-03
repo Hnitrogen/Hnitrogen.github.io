@@ -1,0 +1,13 @@
+{
+  "character": "Married Sylphiette / 婚后的希露菲",
+  "generator": "Built-in image_gen tool",
+  "kind": "AI fan illustration, full-body revision",
+  "date": "2026-10-31",
+  "source": "design/sylphie-married-fullbody.png",
+  "reference": "design/sylphie-married-reference.png",
+  "assets": [
+    "public/images/sylphie-married-fullbody.webp",
+    "public/images/sylphie-married-fullbody-mobile.webp"
+  ],
+  "prompt": "Use case: precise-object-edit and identity-preserve.\nEdit Image 1 (the current garden banner) using Image 2 as the authoritative identity reference for ADULT MARRIED Sylphiette from Mushoku Tensei.\nThe user wants to see her WHOLE BODY, head to feet. Recompose the scene as a panoramic 3:1 landscape banner with her entire full-length seated figure clearly visible in the RIGHT third. Pull the camera BACK. Her full head, long silver-white hair tied into a low ponytail, blue teardrop earrings, hands holding the journal, long dark high-neck dress with narrow pale-gold piping, dress hem and both dark shoes MUST all be completely INSIDE the canvas with at least 6% margin above her head and below her shoes. Seated on a pale stone garden bench, her entire body occupies at most 80% of canvas height. No crops at head, knees, legs or feet. Do not put flowers or a railing in front of her feet.\nKeep the likeness and clean television anime cel-shaded character style of the references: mature slender face, narrow gentle reddish-pink eyes, silver-white swept fringe with two small curved hairpins, long elf ears, blue dangling teardrop earrings, black/navy modest high-collared outfit with thin pale-gold trim. NO short bob, NO green cloak, NO white dress. No other people.\nRetain the lush sunny magic-academy garden backdrop, ivory stone architecture, ivy, small flowers and distant fantasy town from Image 1. Rich atmospheric painted background. The LEFT two-thirds is scenery. No text or UI. This is the artwork itself, not a screenshot.\nOutput a wide 3:1 full scene. No logos, no words, no watermark, no screenshot border or icons. Full body visibly complete is the highest compositional priority."
+}

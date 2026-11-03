@@ -40,6 +40,10 @@ const search = JSON.parse(
 );
 const feed = readFileSync(join(root, "rss.xml"), "utf8");
 const home = readFileSync(join(root, "index.html"), "utf8");
+const directory = readFileSync(join(root, "directory/index.html"), "utf8");
+const experiences = readFileSync(join(root, "experiences/index.html"), "utf8");
+const metadata = JSON.parse(readFileSync("content/meta.json", "utf8"));
+const published = [];
 let publicCount = 0;
 for (const entry of readdirSync("content/posts", {
   withFileTypes: true,
@@ -50,9 +54,13 @@ for (const entry of readdirSync("content/posts", {
   const url = `${base}/posts/${data.slug}/`;
   if (isPublished(data)) {
     publicCount++;
+    published.push(data);
     assert.ok(existsSync(join(root, "posts", data.slug, "index.html")));
     assert.ok(search.some((item) => item.url === url));
     assert.ok(feed.includes(url));
+    assert.ok(home.includes(`href="${url}"`), `首页文件树缺少公开文章：${data.slug}`);
+    const inExperiences = experiences.includes(`href="${url}"`);
+    assert.equal(inExperiences, metadata.posts[data.slug].category === 'experiences', `体验文件夹收录错误：${data.slug}`);
   } else {
     assert.ok(
       !existsSync(join(root, "posts", data.slug, "index.html")),
@@ -61,10 +69,17 @@ for (const entry of readdirSync("content/posts", {
     assert.ok(!search.some((item) => item.url === url), "草稿泄漏到搜索");
     assert.ok(!feed.includes(url), "草稿泄漏到 RSS");
     assert.ok(!home.includes(url), "草稿泄漏到首页或文档树");
+    assert.ok(!experiences.includes(url), "草稿泄漏到体验文件夹");
   }
 }
 assert.equal(search.length, publicCount);
+const homeSlugs = [...home.matchAll(/data-post-id="([^"]+)"/g)].map((match) => match[1]);
+assert.deepEqual(homeSlugs.sort(), published.map((post) => post.slug).sort(), '首页目录遗漏或重复收录文章');
+assert.ok(home.includes('data-file-explorer'), '首页缺少文件树');
+assert.ok(!home.includes('collection-pagination') && !home.includes('post-grid'), '首页仍保留集合或分页');
+assert.ok(!existsSync(join(root, 'page')), '仍生成了集合分页');
+assert.ok(directory.includes('http-equiv="refresh"'), '旧目录地址未跳转首页');
 assert.ok(existsSync(join(root, "pagefind/pagefind.js")), "缺少生产搜索索引");
 console.log(
-  `构建验证通过：${htmlFiles.length} 个 HTML、${linkCount} 处内部链接与资源、${publicCount} 篇公开文章；草稿隔离正常。`,
+  `构建验证通过：${htmlFiles.length} 个 HTML、${linkCount} 处内部链接与资源、${publicCount} 篇公开文章；首页文件树、体验归类、旧地址跳转与草稿隔离正常。`,
 );

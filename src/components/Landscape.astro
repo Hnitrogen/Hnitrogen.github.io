@@ -1,0 +1,21 @@
+---
+import { withBase } from '../lib/paths';
+import { LANDSCAPES } from '../lib/landscapes.mjs';
+---
+<div class="landscape" aria-hidden="true" data-pagefind-ignore>
+  {LANDSCAPES.map((scene) => <img class="landscape-photo" data-landscape={scene.id} data-src={withBase(scene.src)} data-srcset={`${withBase(scene.mobile)} 960w, ${withBase(scene.src)} ${scene.width}w`} sizes="100vw" alt="" decoding="async" />)}
+  <noscript><picture><source media="(max-width: 760px)" srcset={withBase(LANDSCAPES[0].mobile)} /><img class="landscape-photo is-active" src={withBase(LANDSCAPES[0].src)} alt="" /></picture></noscript>
+  <div class="landscape-wash"></div>
+</div>
+<script is:inline>
+  // Start the saved scene before the main bundle; never flash a different photo.
+  {
+    const photo = document.querySelector(`[data-landscape="${document.documentElement.dataset.scenery}"]`) || document.querySelector('[data-landscape]');
+    if (photo) {
+      photo.fetchPriority = 'high';
+      photo.srcset = photo.dataset.srcset;
+      photo.src = photo.dataset.src;
+      photo.classList.add('is-active');
+    }
+  }
+</script>

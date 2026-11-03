@@ -1,0 +1,15 @@
+{
+  "theme": "Sylphiette's Garden",
+  "character": "Sylphiette / 希露菲叶特, adult white-haired appearance",
+  "generator": "Built-in image_gen tool",
+  "date": "2026-10-31",
+  "kind": "AI-generated fan illustration",
+  "source": "design/sylphie-garden.png",
+  "assets": [
+    "public/images/sylphie-garden.webp",
+    "public/images/sylphie-garden-small.webp",
+    "public/images/sylphie-avatar.webp",
+    "public/images/sylphie-landscape.webp"
+  ],
+  "prompt": "Use case: illustration-story.\nAsset type: finished extra-wide cinematic anime illustration used as the hero background of a personal technical blog themed around Sylphiette from Mushoku Tensei.\nPrimary request: depict recognizable adult Sylphiette (white/silver short bob hair with a small braid, red eyes, long elf ears, forest-green cloak with golden clasp over a modest white dress), sitting on a stone garden terrace, holding an open journal and a quill, smiling gently at the viewer. She occupies the RIGHT third of the composition, from head to waist, face clearly visible and large enough to recognize. This is a fully clothed, wholesome scene.\nScene/backdrop: richly illustrated fantasy magic academy garden with pale stone arches, ivy and wildflowers, distant European fantasy rooftops, clouds, a calm summer breeze, warm afternoon sunlight. LEFT half shows garden scenery with softened depth and generous low-detail areas for website title overlay; no other characters. Include a few floating mint magical motes and warm golden leaves.\nStyle/medium: polished hand-painted anime key visual, crisp beautiful character drawing, lush painterly environmental detail, cinematic depth, luminous greens and creamy sky, gentle adventurous mood, highly finished fan illustration. Strong atmospheric perspective.\nComposition/framing: panoramic landscape aspect ratio 2.5:1, hero banner, subject positioned right of center, airy visible environment on the left. Make the scene colorful and visually rich, not minimal.\nConstraints: NO text, NO logos, NO watermark, NO typography, NO UI, NO frame. Not Reimu, no red-white shrine maiden outfit, no long hair."
+}

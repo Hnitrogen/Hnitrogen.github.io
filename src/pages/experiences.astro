@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import FileTree from '../components/FileTree.astro';
+import { getPosts, categories } from '../lib/posts';
+const posts = await getPosts();
+const category = categories.experiences;
+---
+<Base title={category.label} description={category.description} section={category.label} experience>
+  <section class="directory-page" aria-labelledby="experience-heading"><FileTree posts={posts} experienceOnly heading={category.label} headingId="experience-heading" /></section>
+</Base>

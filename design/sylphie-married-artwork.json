@@ -1,0 +1,14 @@
+{
+  "character": "婚后的希露菲 / Married Sylphiette",
+  "generator": "Built-in image_gen tool",
+  "kind": "AI-generated fan illustration guided by user-provided reference",
+  "date": "2026-10-31",
+  "reference": "design/sylphie-married-reference.png",
+  "source": "design/sylphie-married-garden.png",
+  "assets": [
+    "public/images/sylphie-married-garden.webp",
+    "public/images/sylphie-married-garden-small.webp",
+    "public/images/sylphie-married-avatar.webp"
+  ],
+  "prompt": "Use case: identity-preserve, precise-character-correction.\nImage 1 is the existing illustrated website banner to edit. Image 2 is the user's authoritative character identity reference.\nReplace the WRONG generic short-bob elf in Image 1 with the EXACT adult MARRIED Sylphiette (Sylphy) from Mushoku Tensei shown in Image 2. Character likeness is the highest priority, above decorative rendering. Keep the beautiful garden, architecture and wide composition from Image 1, but redraw the character in the clean Japanese TV-anime cel-shaded visual style of Image 2, integrated naturally into the backdrop.\nMatch Image 2 faithfully: adult slim elegant face, small chin and mature facial proportions, narrow half-lidded reddish-pink eyes with dark upper eyelashes, silver-white shoulder-length hair with longer straight side locks, hair drawn back and tied at the nape into a low ponytail, a swept fringe held with the small golden curved hairpins seen in the reference, long pointed elf ears, prominent dangling faceted BLUE teardrop earrings, black/navy high-neck modest dress with a thin pale-gold trim along the collar and shoulders. Gentle composed smile, a three-quarter head turn toward the viewer. No green cloak, no short bob, no braid crown, no white frilly dress, no baby face, no chibi proportions, no blush-heavy generic doll face.\nComposition: panoramic banner, same landscape aspect as Image 1. The adult character occupies the RIGHT third, head and shoulders plus upper torso; her full head and earrings must be clearly visible with comfortable top margin, face about 75% across and 40% down, suitable for a short website banner. She may hold the journal low in the composition. Let the garden fill the LEFT two-thirds with no text overlays. Maintain the luminous sunny greenery and warm pale stone from Image 1, but use coherent painted-background/anime-character finish.\nOnly the artwork should be rendered. Exclude all screenshot UI from Image 2: NO rounded screen borders, NO X/close icon, NO ellipsis, NO corner brackets. NO text, NO logo, NO watermark."
+}

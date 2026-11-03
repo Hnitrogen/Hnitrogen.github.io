@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+import PostCover from './PostCover.astro';
+import { categories, postUrl, formatDate, type Post } from '../lib/posts';
+interface Props { posts: Post[]; experienceOnly?: boolean; heading?: string; headingId?: string; }
+const { posts, experienceOnly = false, heading = '目录', headingId = 'directory-heading' } = Astro.props;
+const experienceGroup = { id: 'experiences', label: categories.experiences.label, posts: posts.filter((post) => post.data.category === 'experiences') };
+const groups = experienceOnly ? [experienceGroup] : [
+  { id: 'notes', label: '笔记', posts: posts.filter((post) => post.data.category !== 'experiences') },
+  experienceGroup,
+];
+---
+<div class="file-explorer" data-file-explorer>
+  <div class="file-explorer-bar"><h1 id={headingId}>{heading}</h1><div class="directory-tools"><span class="directory-path">content/posts</span><div class="file-explorer-actions"><button type="button" data-tree-expand aria-label="展开所有文件夹" title="展开所有文件夹"><Icon name="expand-tree" size={15} /></button><button type="button" data-tree-collapse aria-label="折叠所有文件夹" title="折叠所有文件夹"><Icon name="collapse-tree" size={15} /></button></div></div></div>
+  <nav class="file-explorer-tree" aria-label="文章文件树">
+    {groups.map((group) => <details class="directory-folder" data-directory-folder id={group.id} open={group.posts.length > 0}>
+      <summary><Icon name="right" size={13} class="directory-chevron" /><Icon name="folder" size={18} class="directory-folder-icon" /><span class="directory-folder-name">{group.label}</span><span class="directory-folder-count">{group.posts.length}</span></summary>
+      <div class="directory-files">{group.posts.length ? group.posts.map((post) => {
+        const modified = post.data.updatedDate || post.data.pubDate;
+        return <a class="directory-file" href={postUrl(post)} data-post-id={post.id} aria-label={`打开 ${post.data.title}`} title={`content/posts/${post.id}/index.md`}><PostCover slug={post.id} /><span class="directory-file-title">{post.data.title}</span><time datetime={modified.toISOString()} title={`更新于 ${formatDate(modified)}`}>{formatDate(modified)}</time></a>;
+      }) : <p class="directory-empty">暂无公开记录。</p>}</div>
+    </details>)}
+  </nav>
+</div>

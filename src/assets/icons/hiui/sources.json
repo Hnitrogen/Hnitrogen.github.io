@@ -1,0 +1,23 @@
+{
+  "search": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Search.svg",
+  "arrow": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Export.svg",
+  "right": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/direction/outlined/Arrow-right.svg",
+  "down": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/direction/outlined/Arrow-down.svg",
+  "file": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/file/outlined/File.svg",
+  "folder": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Folder.svg",
+  "grid": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/App-store.svg",
+  "archive": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Archive.svg",
+  "moon": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Moon.svg",
+  "sun": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Sun.svg",
+  "menu": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Menu.svg",
+  "close": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/alert/outlined/Close.svg",
+  "focus": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/direction/outlined/Fullscreen.svg",
+  "unfocus": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/direction/outlined/Fullscreen-exit.svg",
+  "clock": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Time.svg",
+  "link": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Link.svg",
+  "info": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/alert/outlined/Info-circle.svg",
+  "compass": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/compass.svg",
+  "expand-tree": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/direction/outlined/Expand.svg",
+  "collapse-tree": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/direction/outlined/Shrink.svg",
+  "picture": "https://raw.githubusercontent.com/XiaoMi/hiui/master/packages/icons/icon-resources/common/outlined/Picture.svg"
+}

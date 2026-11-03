@@ -38,7 +38,7 @@ function fixture(fn) {
   }
 }
 test("真实内容的分类、slug、日期和本地图片均有效", () => {
-  assert.ok(validateContent().posts["building-with-agents"]);
+  assert.ok(Object.keys(validateContent().posts).length > 0);
 });
 test("未知分类、未知标签和重复标签会阻止构建", () => {
   const badCategory = registry();

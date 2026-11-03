@@ -1,3 +1,8 @@
+import { initPostCovers } from './post-covers';
+import { initLandscape } from './landscape';
+
+initLandscape();
+initPostCovers();
 const root = document.documentElement;
 const themeButton = document.querySelector<HTMLButtonElement>(
   "[data-theme-toggle]",
@@ -36,7 +41,8 @@ const sidebar = document.querySelector<HTMLElement>(".sidebar")!;
 const mobileLayout = matchMedia("(max-width: 760px)");
 function syncSidebarAccess() {
   sidebar.inert =
-    mobileLayout.matches && !document.body.classList.contains("sidebar-open");
+    root.classList.contains("reading-focus") ||
+    (mobileLayout.matches && !document.body.classList.contains("sidebar-open"));
 }
 function closeMenu() {
   const wasOpen = document.body.classList.contains("sidebar-open");
@@ -54,8 +60,8 @@ menu?.addEventListener("click", () => {
 mobileLayout.addEventListener("change", closeMenu);
 syncSidebarAccess();
 document
-  .querySelector("[data-menu-close]")
-  ?.addEventListener("click", closeMenu);
+  .querySelectorAll("[data-menu-close]")
+  .forEach((button) => button.addEventListener("click", closeMenu));
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenu();
   if (
@@ -81,47 +87,72 @@ document
   .querySelectorAll(".sidebar a")
   .forEach((link) => link.addEventListener("click", closeMenu));
 
-let activeCategory = "all";
-const rows = [...document.querySelectorAll<HTMLElement>(".post-row")];
-const sort = document.querySelector<HTMLSelectElement>("#post-sort");
-function updatePosts() {
-  let visible = 0;
-  rows.sort((a, b) =>
-    sort?.value === "oldest"
-      ? Number(a.dataset.date) - Number(b.dataset.date)
-      : sort?.value === "updated"
-        ? Number(b.dataset.updated) - Number(a.dataset.updated)
-        : Number(b.dataset.date) - Number(a.dataset.date),
+const focusButton = document.querySelector<HTMLButtonElement>(
+  "[data-focus-toggle]",
+);
+function setReadingFocus(enabled: boolean) {
+  if (!focusButton) return;
+  // Keep the current paragraph in view when the wider layout changes line wraps.
+  const scrollTop = window.scrollY;
+  const scrollAnchoring = root.style.overflowAnchor;
+  root.style.overflowAnchor = "none";
+  const readingEdge =
+    document.querySelector(".topbar")!.getBoundingClientRect().bottom + 24;
+  const anchor = scrollTop > readingEdge
+    ? [
+        ...document.querySelectorAll<HTMLElement>(
+          ".article-heading, .prose > *, .article-signoff",
+        ),
+      ].find((element) => element.getBoundingClientRect().bottom > readingEdge)
+    : undefined;
+  const previousTop = anchor?.getBoundingClientRect().top;
+
+  if (enabled) closeMenu();
+  root.classList.toggle("reading-focus", enabled);
+  focusButton.setAttribute("aria-pressed", String(enabled));
+  focusButton.setAttribute(
+    "aria-label",
+    enabled ? "退出聚焦阅读" : "开启聚焦阅读",
   );
-  rows.forEach((row) => {
-    row.hidden =
-      activeCategory !== "all" && row.dataset.category !== activeCategory;
-    row.parentElement?.append(row);
-    if (!row.hidden) {
-      visible++;
-      const number = row.querySelector(".post-index");
-      if (number) number.textContent = String(visible).padStart(2, "0");
-    }
+  focusButton.title = enabled ? "退出聚焦阅读（Esc）" : "隐藏侧栏，放大正文";
+  focusButton.querySelector("[data-focus-label]")!.textContent = enabled
+    ? "退出聚焦"
+    : "聚焦阅读";
+  syncSidebarAccess();
+
+  const offset = anchor && previousTop !== undefined
+    ? anchor.getBoundingClientRect().top - previousTop
+    : 0;
+  window.scrollTo({ top: scrollTop + offset, behavior: "instant" });
+  requestAnimationFrame(() => {
+    root.style.overflowAnchor = scrollAnchoring;
+    updateReading();
   });
-  const count = document.querySelector("[data-visible-count]");
-  if (count) count.textContent = String(visible);
-  const empty = document.querySelector<HTMLElement>(".filter-empty");
-  if (empty) empty.hidden = visible !== 0;
 }
-document
-  .querySelectorAll<HTMLButtonElement>("[data-category-filter]")
-  .forEach((button) =>
-    button.addEventListener("click", () => {
-      activeCategory = button.dataset.categoryFilter || "all";
-      document.querySelectorAll("[data-category-filter]").forEach((item) => {
-        const active = item === button;
-        item.classList.toggle("active", active);
-        item.setAttribute("aria-pressed", String(active));
-      });
-      updatePosts();
-    }),
-  );
-sort?.addEventListener("change", updatePosts);
+focusButton?.addEventListener("click", () => {
+  setReadingFocus(!root.classList.contains("reading-focus"));
+});
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    !event.defaultPrevented &&
+    !event.isComposing &&
+    root.classList.contains("reading-focus") &&
+    !document.querySelector("dialog[open]")
+  ) {
+    setReadingFocus(false);
+    focusButton?.focus({ preventScroll: true });
+  }
+});
+
+const fileExplorer = document.querySelector<HTMLElement>('[data-file-explorer]');
+const directoryFolders = [...(fileExplorer?.querySelectorAll<HTMLDetailsElement>('[data-directory-folder]') || [])];
+fileExplorer?.querySelector('[data-tree-expand]')?.addEventListener('click', () => {
+  directoryFolders.forEach((folder) => { folder.open = true; });
+});
+fileExplorer?.querySelector('[data-tree-collapse]')?.addEventListener('click', () => {
+  directoryFolders.forEach((folder) => { folder.open = false; });
+});
 
 async function copyText(value: string) {
   if (navigator.clipboard?.writeText)

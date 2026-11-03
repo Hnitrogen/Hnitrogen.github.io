@@ -1,0 +1,13 @@
+---
+import { withBase } from '../lib/posts';
+import Icon from './Icon.astro';
+interface Props { slug: string; variant?: 'thumbnail' | 'article'; }
+const { slug, variant = 'thumbnail' } = Astro.props;
+const fallback = withBase('images/landscapes/alpine-drive-cover.webp');
+---
+<span class:list={['post-cover', `post-cover-${variant}`]} aria-hidden="true" data-pagefind-ignore>
+  <img alt="" width={variant === 'article' ? 960 : 160} height={variant === 'article' ? 300 : 100} loading={variant === 'article' ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" data-cover-slug={slug} data-cover-fallback={fallback} data-cover-state="pending" />
+  <span class="post-cover-pending"><span></span><span></span><span></span></span>
+  <span class="post-cover-error"><Icon name="picture" size={18} /></span>
+  <noscript><img class="post-cover-nojs" src={fallback} alt="" width="160" height="100" loading="lazy" /></noscript>
+</span>
