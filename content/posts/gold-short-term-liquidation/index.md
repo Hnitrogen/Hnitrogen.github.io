@@ -2,8 +2,8 @@
 slug: gold-short-term-liquidation
 title: "黄金短线（伦敦金）爆仓体验：我是三次元久留美 😆"
 description: "一周伦敦金短线，从睡梦中止损到 10 月 30 日爆仓：记录杠杆、波动，以及被频繁看盘占据的注意力。"
-pubDate: 2026-10-31
-draft: true
+pubDate: 2026-11-09
+draft: false
 ---
 
 伦敦金短线玩了一周，吃过回调，也终于体验了一次爆仓。
