@@ -20,11 +20,17 @@ draft: false
 
 ### 确认 Google Play 地区
 
-可以打开 [Google Play 设置](https://play.google.com/settings)，查看账号的地区信息。Google Play 地区会影响商店内容和可用的付款方式。
+可以打开 [Google Play 设置](https://play.google.com/settings)，查看账号的地区信息：
+
+```text
+https://play.google.com/settings
+```
+
+Google Play 地区会影响商店内容和可用的付款方式。
 
 ### 付款资料与地区变更
 
-网上有通过新增付款资料、填写美国地址来更换地区的做法，也有人提到用无效礼品卡兑换触发地区检测。我没有确认这种方法可靠，不能把它当作强制换区的办法；付款和账单资料应与实际情况相符，税费也以结账页面为准。
+网上有通过`新增付款资料`来更换地区的做法，也有人提到用无效礼品卡兑换触发地区检测。我没有确认这种方法可靠，不能把它当作强制换区的办法；`付款和账单资料应与实际情况相符`，税费也以结账页面为准。
 
 根据 [Google 的说明](https://support.google.com/googleplay/answer/7431675?hl=zh-Hans)，更改 Google Play 国家或地区需要身处新地区并拥有当地付款方式，地区变更还有时间间隔和其他限制。旧订阅可能仍留在原付款资料下，更改前也要检查已有订阅。
 
@@ -32,7 +38,14 @@ draft: false
 
 如果手机上登录了多个 Google 账号，并用其中一个 Google Play 账号给某个 ChatGPT 账号订阅过 Plus，再给另一个 ChatGPT 账号购买时，可能遇到订阅已关联其他账号的提示。
 
-这里需要区分 **Google Play 账号**和 **ChatGPT 账号**：移动端订阅同时关联购买时使用的商店账号和 ChatGPT 账号，不能在不同 ChatGPT 账号之间转移或共享。退出手机上的某个账号，或者取消原订阅，都不一定能解除关联。
+这里需要区分 **Google Play 账号**和 **ChatGPT 账号**：
+
+```text
+移动端订阅同时关联购买时使用的 Google Play 账号和 ChatGPT 账号。
+订阅不能在不同 ChatGPT 账号之间转移或共享。
+```
+
+退出手机上的某个账号，或者取消原订阅，都不一定能解除关联。
 
 如果已经付费，先用原来购买时的 ChatGPT 账号登录，并检查对应 Google Play 账号中的订阅，避免重复扣费。如果想给另一个 ChatGPT 账号购买，OpenAI 建议登录该账号后在网页端查看可用套餐；购买前检查原订阅，避免重复订阅。仍有问题时，可以联系支持团队。详见 [OpenAI 的订阅和账号问题排查](https://help.openai.com/en/articles/20001056-troubleshooting-chatgpt-subscription-access-and-account-changes)及[避免重复扣费的说明](https://help.openai.com/en/articles/20001043-how-do-i-avoid-being-charged-twice-if-i-subscribe-to-chatgpt-on-ios-android-and-the-web)。
 
